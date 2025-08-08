@@ -1,0 +1,47 @@
+{
+    "name": "silverstripe/silverstripe-forager-fluent",
+    "description": "Fluent (translations) support for silverstripe/silverstripe-forager",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Bernie Hamlin",
+            "email": "bernie@silverstripe.com"
+        },
+        {
+            "name": "Chris Penny",
+            "email": "chris.penny@silverstripe.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "silverstripe/cms": "^6",
+        "tractorcow/silverstripe-fluent": "^8"
+    },
+    "require-dev": {
+        "silverstripe/recipe-testing": "^4",
+        "slevomat/coding-standard": "~8.18.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SilverStripe\\ForagerFluent\\": "src/",
+            "SilverStripe\\ForagerFluent\\Tests\\": "tests/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true
+        }
+    },
+    "extra": {
+        "project-files-installed": [
+            "behat.yml",
+            "phpunit.xml.dist"
+        ]
+    }
+}
