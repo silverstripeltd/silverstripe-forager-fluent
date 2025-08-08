@@ -1,0 +1,10 @@
+---
+Name: forager-fluent-jobs
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forager\Jobs\IndexJob:
+    class: SilverStripe\ForagerFluent\Jobs\IndexJob
+  SilverStripe\Forager\Jobs\ReindexJob:
+    class: SilverStripe\ForagerFluent\Jobs\ReindexJob
+  SilverStripe\Forager\Jobs\RemoveDataObjectJob:
+    class: SilverStripe\ForagerFluent\Jobs\RemoveDataObjectJob

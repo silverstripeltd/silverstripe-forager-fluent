@@ -1,0 +1,101 @@
+TractorCow\Fluent\Model\Locale:
+  en:
+    Locale: en_NZ
+    Title: 'English'
+    URLSegment: 'en'
+    Sort: 1
+  cn:
+    Locale: mi_NZ
+    Title: 'Te Reo Māori'
+    URLSegment: 'mi'
+    Sort: 2
+    Fallbacks:
+      - =>TractorCow\Fluent\Model\Locale.en
+
+SilverStripe\ForagerFluent\Tests\Fake\FakeVersioned:
+  record1:
+    Title: Record 1
+
+SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned:
+  record1:
+    Title: Base record 1
+    ShowInSearch: 0
+  record2:
+    Title: Base record 2
+    ShowInSearch: 0
+
+FakeFluentVersioned_Localised:
+  record1_en:
+    Title: English record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned.record1
+    Locale: en_NZ
+  record1_mi:
+    Title: Te Reo record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned.record1
+    Locale: mi_NZ
+  record2_en:
+    Title: English record 2
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned.record2
+    Locale: en_NZ
+
+FakeFluentVersioned_Localised_Live:
+  record1_en:
+    Title: English record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned.record1
+    Locale: en_NZ
+  record1_mi:
+    Title: Te Reo record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned.record1
+    Locale: mi_NZ
+  record2_en:
+    Title: English record 2
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned.record2
+    Locale: en_NZ
+
+SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative:
+  record1:
+    Title: Base record 1
+    ShowInSearch: 0
+  record2:
+    Title: Base record 2
+    ShowInSearch: 0
+
+FakeFluentVersionedAlternative_Localised:
+  record1_en:
+    Title: English record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative.record1
+    Locale: en_NZ
+  record1_mi:
+    Title: Te Reo record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative.record1
+    Locale: mi_NZ
+  record2_en:
+    Title: English record 2
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative.record2
+    Locale: en_NZ
+
+FakeFluentVersionedAlternative_Localised_Live:
+  record1_en:
+    Title: English record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative.record1
+    Locale: en_NZ
+  record1_mi:
+    Title: Te Reo record 1
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative.record1
+    Locale: mi_NZ
+  record2_en:
+    Title: English record 2
+    ShowInSearch: 1
+    RecordID: =>SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative.record2
+    Locale: en_NZ
