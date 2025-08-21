@@ -124,7 +124,7 @@ class SearchServiceExtension extends BaseSearchServiceExtension
 
         // Now that we have our Locale codes, we need to find the corresponding index suffixes
         foreach ($indexConfigurations as $indexSuffix => $indexConfiguration) {
-            if (!in_array($indexConfiguration['locale'] ?? '', $updatedLocales, true)) {
+            if (!in_array($indexConfiguration[IndexDataExtension::INDEX_LOCALE_PROP] ?? '', $updatedLocales, true)) {
                 continue;
             }
 
