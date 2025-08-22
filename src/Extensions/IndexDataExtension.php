@@ -2,7 +2,7 @@
 
 namespace SilverStripe\ForagerFluent\Extensions;
 
-use Aws\Arn\Exception\InvalidArnException;
+use InvalidArgumentException;
 use SilverStripe\Core\Extension;
 use SilverStripe\Forager\Service\IndexData;
 
@@ -17,7 +17,7 @@ class IndexDataExtension extends Extension {
     {
         $data = $this->owner->getData();
         if (!array_key_exists(self::INDEX_LOCALE_PROP, $data)) {
-            throw new InvalidArnException(sprintf('No locale found on index suffix: "%s"', ));
+            throw new InvalidArgumentException(sprintf('No locale found on index suffix: "%s"', $this->owner->getSuffix()));
         }
 
         return $data[self::INDEX_LOCALE_PROP] ?? '';
