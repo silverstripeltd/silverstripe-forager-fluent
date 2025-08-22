@@ -10,22 +10,26 @@ use TractorCow\Fluent\State\FluentState;
 
 class LocaleIndexDataContext implements IndexDataContextProvider
 {
+
     use Injectable;
 
-    public function __construct(
-        private string $locale
-    )
-    {}
+    public function __construct(private string $locale)
+    {
+    }
 
-    public function getContext(): callable {
-        return function (callable $next, IndexData $indexData): mixed {
-            return FluentState::singleton()->withState(function (FluentState $state) use ($next, $indexData): mixed {
-                $state->setIsFrontend(true);
-                /** @var IndexDataExtension $indexData */
-                $state->setLocale($indexData->getLocale());
+    public function getContext(): callable
+    {
+        return static function (callable $next, IndexData $indexData): mixed {
+            return FluentState::singleton()->withState(
+                static function (FluentState $state) use ($next, $indexData): mixed {
+                    $state->setIsFrontend(true);
+                    /** @var IndexDataExtension $indexData */
+                    $state->setLocale($indexData->getLocale());
 
-                return $next();
-            });
+                    return $next();
+                }
+            );
         };
     }
+
 }
