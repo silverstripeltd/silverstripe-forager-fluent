@@ -16,7 +16,7 @@
     "require": {
         "php": "^8.3",
         "silverstripe/cms": "^6",
-        "silverstripe/silverstripe-forager": "dev-feature/v2-fluent-support-changes",
+        "silverstripe/silverstripe-forager": "dev-feature/v2-fluent-support-with-context",
         "tractorcow/silverstripe-fluent": "^8"
     },
     "require-dev": {
