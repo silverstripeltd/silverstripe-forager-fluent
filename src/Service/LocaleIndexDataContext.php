@@ -13,10 +13,6 @@ class LocaleIndexDataContext implements IndexDataContextProvider
 
     use Injectable;
 
-    public function __construct(private string $locale)
-    {
-    }
-
     public function getContext(): callable
     {
         return static function (callable $next, IndexData $indexData): mixed {
