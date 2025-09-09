@@ -1,0 +1,21 @@
+---
+Name: forager-fluent-extensions
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forager\Extensions\SearchServiceExtension:
+    class: SilverStripe\ForagerFluent\Extensions\SearchServiceExtension
+
+SilverStripe\Forager\Service\IndexData:
+  extensions:
+    ForagerFluentIndexDataExtension: SilverStripe\ForagerFluent\Extensions\IndexDataExtension
+
+---
+Name: forager-fluent-context
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forager\Service\IndexData:
+      properties:
+        contexts:
+          fluent:
+            SilverstripeForagerLiveIndexDataContext: '%$SilverStripe\Forager\Service\LiveIndexDataContext'
+            SilverstripeForagerLocaleIndexDataContext: '%$SilverStripe\ForagerFluent\Service\LocaleIndexDataContext'

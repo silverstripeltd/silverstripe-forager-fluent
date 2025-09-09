@@ -6,7 +6,7 @@ use Page;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Forager\DataObject\DataObjectDocument;
 use SilverStripe\Forager\Service\IndexConfiguration;
-use SilverStripe\ForagerFluent\Jobs\IndexJob;
+use SilverStripe\Forager\Jobs\IndexJob;
 use SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersioned;
 use SilverStripe\ForagerFluent\Tests\Fake\FakeFluentVersionedAlternative;
 use SilverStripe\ForagerFluent\Tests\Fake\FakeVersioned;
