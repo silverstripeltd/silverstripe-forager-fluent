@@ -173,4 +173,10 @@
             <property name="linesCountAfterWhenLastInLastCaseOrDefault" value="0"/>
         </properties>
     </rule>
+
+    <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration">
+        <properties>
+            <property name="allowAboveNonAssignment" value="true"/>
+        </properties>
+    </rule>
 </ruleset>
