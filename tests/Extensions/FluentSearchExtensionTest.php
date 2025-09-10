@@ -14,10 +14,10 @@ use Symbiote\QueuedJobs\DataObjects\QueuedJobDescriptor;
 use Symbiote\QueuedJobs\Services\QueuedJobService;
 use TractorCow\Fluent\State\FluentState;
 
-class SearchServiceExtensionTest extends SapphireTest
+class FluentSearchExtensionTest extends SapphireTest
 {
 
-    protected static $fixture_file = 'SearchServiceExtensionTest.yml';
+    protected static $fixture_file = 'FluentSearchExtensionTest.yml';
 
     protected static $extra_dataobjects = [
         FakeFluentVersioned::class,
