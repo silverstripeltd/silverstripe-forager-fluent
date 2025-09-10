@@ -1,9 +1,9 @@
 ---
 Name: forager-fluent-extensions
 ---
-SilverStripe\Core\Injector\Injector:
-  SilverStripe\Forager\Extensions\SearchServiceExtension:
-    class: SilverStripe\ForagerFluent\Extensions\SearchServiceExtension
+SilverStripe\Forager\Extensions\SearchServiceExtension:
+  extensions:
+    FluentSearchExtension: SilverStripe\ForagerFluent\Extensions\FluentSearchExtension
 
 SilverStripe\Forager\Service\IndexData:
   extensions:
