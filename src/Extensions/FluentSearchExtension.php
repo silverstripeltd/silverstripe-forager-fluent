@@ -8,7 +8,6 @@ use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Forager\Extensions\SearchServiceExtension;
 use SilverStripe\Forager\Interfaces\DataObjectDocumentInterface;
 use SilverStripe\Forager\Service\IndexConfiguration;
-use SilverStripe\ORM\DataObject;
 use TractorCow\Fluent\Extension\FluentExtension;
 use TractorCow\Fluent\Model\Locale;
 use TractorCow\Fluent\State\FluentState;
@@ -41,60 +40,6 @@ class FluentSearchExtension extends Extension
 
         // note this may be an empty array if no updates are required
         $indexSuffixes = $suffixesForLocalisation;
-    }
-
-    /**
-     * Update the isPublished field for localised documents as in some cases the fallback is all we care about
-     *
-     * @param DataObject $dataObject
-     * @param bool $isPublished
-     * @return void
-     */
-    public function updateIsPublishedForSearch(DataObject $dataObject, bool &$isPublished): void
-    {
-        // If the object doesn't have Fluent extension, use default behaviour
-        if (!$dataObject->hasExtension(FluentExtension::class)) {
-            return;
-        }
-
-        // Get the current locale
-        $currentLocaleCode = FluentState::singleton()->getLocale();
-
-        if (!$currentLocaleCode) {
-            return;
-        }
-
-        // Get locale information for this DataObject in the current locale
-        $localInformation = $dataObject->LocaleInformation($currentLocaleCode);
-
-        // Check if the object exists in any locale
-        if (!$localInformation->Exists()) {
-            $isPublished = false;
-
-            return;
-        }
-
-        // Check if it's published in the source locale
-        if ($localInformation->IsPublished(true)) {
-            $isPublished = true;
-
-            return;
-        }
-
-        // If not published in this locale, check if the source locale is published
-        $sourceLocale = $localInformation->getSourceLocale();
-
-        if (!$sourceLocale || $sourceLocale->Locale === $currentLocaleCode) {
-            // No source locale or source is current locale
-            $isPublished = false;
-
-            return;
-        }
-
-        // Check if the content is published in the source locale
-        $sourceLocalInformation = $dataObject->LocaleInformation($sourceLocale->Locale);
-
-        $isPublished = $sourceLocalInformation->Exists() && $sourceLocalInformation->IsPublished(true);
     }
 
     /**
