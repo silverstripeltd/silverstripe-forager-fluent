@@ -10,6 +10,7 @@ SilverStripe\Forager\Service\IndexData:
     ForagerFluentIndexDataExtension: SilverStripe\ForagerFluent\Extensions\IndexDataExtension
 
 SilverStripe\Forager\DataObject\DataObjectDocument:
+  require_data_object: false
   extensions:
     FluentDataObjectDocumentExtension: SilverStripe\ForagerFluent\Extensions\DataObjectDocumentExtension
 
