@@ -11,6 +11,7 @@ SilverStripe\Forager\Service\IndexData:
 
 SilverStripe\Forager\DataObject\DataObjectDocument:
   require_data_object: false
+  use_synchronous_dependencies: true
   extensions:
     FluentDataObjectDocumentExtension: SilverStripe\ForagerFluent\Extensions\DataObjectDocumentExtension
 

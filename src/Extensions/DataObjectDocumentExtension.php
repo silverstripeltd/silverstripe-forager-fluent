@@ -19,7 +19,7 @@ class DataObjectDocumentExtension extends Extension
      * Update the isPublished check to be Fluent-aware, considering fallback locales.
      *
      * This method is called from DataObjectDocument::shouldIndex() to allow
-     * content published in fallback locales to be indexed in dependent locales.
+     * content published in fallback locales to be indexed in locale contexts.
      *
      * @param DataObject $dataObject
      * @param bool $isPublished
