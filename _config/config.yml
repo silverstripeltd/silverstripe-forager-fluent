@@ -9,13 +9,19 @@ SilverStripe\Forager\Service\IndexData:
   extensions:
     ForagerFluentIndexDataExtension: SilverStripe\ForagerFluent\Extensions\IndexDataExtension
 
+SilverStripe\Forager\DataObject\DataObjectDocument:
+  require_data_object: false
+  use_synchronous_dependencies: true
+  extensions:
+    FluentDataObjectDocumentExtension: SilverStripe\ForagerFluent\Extensions\DataObjectDocumentExtension
+
 ---
 Name: forager-fluent-context
 ---
 SilverStripe\Core\Injector\Injector:
   SilverStripe\Forager\Service\IndexData:
-      properties:
-        contexts:
-          fluent:
-            SilverstripeForagerLiveIndexDataContext: '%$SilverStripe\Forager\Service\LiveIndexDataContext'
-            SilverstripeForagerLocaleIndexDataContext: '%$SilverStripe\ForagerFluent\Service\LocaleIndexDataContext'
+    properties:
+      contexts:
+        fluent:
+          SilverstripeForagerLiveIndexDataContext: '%$SilverStripe\Forager\Service\LiveIndexDataContext'
+          SilverstripeForagerLocaleIndexDataContext: '%$SilverStripe\ForagerFluent\Service\LocaleIndexDataContext'
